@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Seller Assistant for Shopee</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap">
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #1e293b;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: #f8fafc;
+        }
+        .container {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            color: #0d9488;
+            margin-bottom: 0.5rem;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 1rem;
+        }
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #334155;
+            margin-top: 1.5rem;
+        }
+        p {
+            margin-bottom: 1rem;
+        }
+        ul {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+        }
+        li {
+            margin-bottom: 0.5rem;
+        }
+        .effective-date {
+            color: #64748b;
+            font-size: 0.875rem;
+            margin-bottom: 2rem;
+        }
+        .footer {
+            margin-top: 3rem;
+            text-align: center;
+            font-size: 0.875rem;
+            color: #94a3b8;
+        }
+        strong {
+            color: #0f172a;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Privacy Policy</h1>
+
+        <p>At <strong>Seller Assistant for Shopee</strong>, we take your privacy and the security of your data extremely seriously. This Privacy Policy describes how we collect, use, and handle information when you use our Chrome Extension.</p>
+
+        <h2>1. Information We Collect</h2>
+        <p>We only collect the minimum amount of data necessary to provide and improve our services. All data collection is designed to be anonymous and privacy-preserving.</p>
+        <ul>
+            <li><strong>Anonymous Usage Statistics</strong>: We collect non-identifiable data such as extension version, event types (e.g., installation, update), and daily query counts to manage service quotas and monitor system health.</li>
+            <li><strong>Hashed Transaction Records (Voluntary)</strong>: If you participate in our "Global Defense Program," the extension scans return/refund records on your Shopee Seller Centre. This data is <strong>anonymized locally</strong> using SHA-256 salted hashing before being transmitted to our servers. We <strong>never</strong> see or store plain-text buyer names, seller names, or order IDs.</li>
+            <li><strong>Manual Reports (Voluntary)</strong>: Reports submitted via the extension are also anonymized using one-way cryptographic hashes.</li>
+        </ul>
+
+        <h2>2. How We Use Information</h2>
+        <p>The collected information is used solely for the following purposes:</p>
+        <ul>
+            <li><strong>Global Risk Assessment</strong>: To provide the "Global Report" counts (Unclaimed/Return/Low Rating) to help sellers identify potential transaction risks.</li>
+            <li><strong>Service Maintenance</strong>: To enforce daily usage limits for free users and ensure service stability.</li>
+            <li><strong>Product Improvement</strong>: To understand general usage trends and optimize extension performance.</li>
+        </ul>
+
+        <h2>3. Data Security and Anonymization</h2>
+        <p>We employ industry-standard security measures to protect your information:</p>
+        <ul>
+            <li><strong>One-Way Hashing</strong>: All sensitive identifiers (Buyer IDs, Seller IDs, Order IDs) are processed using <strong>SHA-256 with a unique salt</strong> directly within your browser. It is mathematically impossible to reverse these hashes to reveal the original identities.</li>
+            <li><strong>No Personal Data (PII)</strong>: We do not collect names, email addresses, passwords, phone numbers, or any financial information.</li>
+            <li><strong>Local Storage</strong>: Your preferences and settings are stored locally on your device and are not uploaded to any server.</li>
+        </ul>
+
+        <h2>4. Third-Party Access</h2>
+        <ul>
+            <li><strong>No Sale of Data</strong>: We do not sell, trade, or rent your data to third parties.</li>
+            <li><strong>Infrastructure</strong>: We use secure cloud infrastructure (e.g., Cloudflare, Supabase) to host our anonymized database, which complies with strict security standards.</li>
+        </ul>
+
+        <h2>5. Permissions Justification</h2>
+        <p>The extension requires specific permissions to function:</p>
+        <ul>
+            <li><code>activeTab</code> / <code>host_permissions</code>: To detect order information and display rating badges on Shopee Seller Centre pages.</li>
+            <li><code>storage</code>: To save your display preferences and local cache.</li>
+            <li><code>alarms</code>: To perform periodic version checks for security and feature updates.</li>
+        </ul>
+
+        <h2>6. User Control and Participation</h2>
+        <p>Participation in the "Global Defense Program" is strictly voluntary. You can choose not to scan or upload records, which will simply limit your access to global risk statistics. You can uninstall the extension at any time to stop all data collection.</p>
+
+        <h2>7. Compliance</h2>
+        <p>This extension is an independent tool and has no official affiliation with Shopee. We comply with the Google Chrome Web Store Developer Terms of Service and Privacy Policy requirements.</p>
+
+        <h2>8. Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time. Any changes will be reflected with a new "Effective Date."</p>
+
+        <div class="footer">
+            Seller Assistant for Shopee &copy; 2026<br>
+            <a href="https://twspassistant.pages.dev/" style="color: #0d9488; text-decoration: none;">twspassistant.pages.dev</a>
+        </div>
+    </div>
+</body>
+</html>
