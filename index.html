@@ -158,6 +158,21 @@
             color: var(--primary);
         }
 
+        .nav-pill.btn-install {
+            background: #ff5722;
+            color: white;
+            box-shadow: 0 2px 8px rgba(255, 87, 34, 0.3);
+            margin-left: auto;
+        }
+
+        .nav-pill.btn-install:hover {
+            background: #f4511e;
+            color: white;
+            box-shadow: 0 4px 12px rgba(255, 87, 34, 0.4);
+            text-decoration: none;
+            transform: translateY(-1px);
+        }
+
         /* ===== SECTIONS ===== */
         .container {
             max-width: 900px;
@@ -480,6 +495,58 @@
                 letter-spacing: 2px;
             }
         }
+
+        /* ===== FAQ ===== */
+        .faq-container {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .faq-item {
+            background: var(--card);
+            border-radius: 16px;
+            padding: 24px;
+            border: 1px solid var(--border);
+            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .faq-item:hover {
+            border-color: var(--primary-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+        }
+
+        .faq-question {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .faq-question::before {
+            content: 'Q';
+            color: var(--primary);
+            font-weight: 900;
+            background: rgba(13, 148, 136, 0.1);
+            min-width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        .faq-answer {
+            font-size: 14px;
+            color: var(--subtext);
+            line-height: 1.8;
+            padding-left: 40px;
+        }
     </style>
 </head>
 
@@ -488,9 +555,9 @@
     <!-- Hero -->
     <header class="hero">
         <div class="hero-content">
-        <div class="hero-icon">
-            <img src="favicon.png" alt="Logo" style="width: 80px; height: 80px; object-fit: contain;">
-        </div>
+            <div class="hero-icon">
+                <img src="favicon.png" alt="Logo" style="width: 80px; height: 80px; object-fit: contain;">
+            </div>
             <h1>賣家助手 for 台灣蝦皮</h1>
             <p>快速掌握買家評價資訊，讓每筆訂單都有保障。</p>
         </div>
@@ -505,8 +572,11 @@
                 聯絡我們</button>
             <button class="nav-pill" onclick="document.getElementById('serial').scrollIntoView({behavior:'smooth'})">🔑
                 取得序號</button>
+            <button class="nav-pill" onclick="document.getElementById('faq').scrollIntoView({behavior:'smooth'})">❓
+                常見問題</button>
             <button class="nav-pill"
                 onclick="document.getElementById('disclaimer').scrollIntoView({behavior:'smooth'})">📜 免責聲明</button>
+            <a href="https://example.com/install" target="_blank" class="nav-pill btn-install">立即安裝</a>
         </div>
     </nav>
 
@@ -589,6 +659,40 @@
             </div>
         </section>
 
+        <!-- FAQ Section -->
+        <section id="faq">
+            <h2 class="section-title">❓ 常見問題</h2>
+            <p class="section-desc">關於套件的操作與隱私，這裡有您想了解的答案。</p>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">訂單上的評價資訊無法顯示？</div>
+                    <div class="faq-answer">可能是因為網路連線較慢或瀏覽器暫時性讀取失敗。建議您嘗試重新整理頁面 (F5)，通常即可恢復顯示。</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">這個套件會收集或截取賣場資料嗎？</div>
+                    <div class="faq-answer">我們極度重視隱私。僅在您主動執行「回報注意名單」或「上傳退貨紀錄」時，才會將該筆訂單編號與買家 ID
+                        加密上傳至雲端資料庫以供社群共享。套件絕不會隨意截取您的個人資料或敏感數據。</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">為什麼無法看到其他賣家留下的評價具體文字？</div>
+                    <div class="faq-answer">為避免潛在的法律爭議、公然侮辱或毀謗等紛爭，系統目前採取「全網回報次數」統計方式展示，不提供具體的留言文字，以確保資訊的客觀性與安全性。</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">同一筆訂單可以回報多筆注意名單嗎？</div>
+                    <div class="faq-answer">不行的。系統目前設定為每一筆訂單僅能回報一筆記錄，以維持資料庫數據的簡潔與準確。</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">未來是否有考慮推出付費版本？</div>
+                    <div class="faq-answer">現有核心功能皆為完全免費使用，目前尚無規劃付費版。如果您有任何產品建議，歡迎隨時透過 LINE 官方帳號與我們交流。</div>
+                </div>
+            </div>
+        </section>
+
         <!-- Disclaimer -->
         <section id="disclaimer">
             <h2 class="section-title">📜 免責聲明</h2>
@@ -600,7 +704,7 @@
                     <li>本套件為第三方工具，與蝦皮官方無任何關聯。</li>
                     <li>使用本套件所產生的任何風險由使用者自行承擔。</li>
                     <li>本套件不會收集、儲存或傳輸您的任何個人資料或帳號密碼至任何伺服器，並遵循 Chrome Extension 隱私權政策。</li>
-                    <li>所有資料僅存於您的瀏覽器本機。</li>
+                    <li>所有明文資料僅儲存於您的瀏覽器本機，上傳至伺服器的訂單資訊皆已加密。</li>
                     <li>本序號僅供合法使用，禁止轉售或用於商業用途。</li>
                     <li>開發者保留隨時修改或終止服務的權利。</li>
                 </ul>
