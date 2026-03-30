@@ -225,44 +225,7 @@
             margin-bottom: 24px;
         }
 
-        .key-button {
-            display: inline-block;
-            padding: 18px 48px;
-            border-radius: 16px;
-            font-size: 18px;
-            font-weight: 800;
-            cursor: pointer;
-            border: 2px dashed var(--primary);
-            background: rgba(13, 148, 136, 0.06);
-            color: var(--primary);
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            letter-spacing: 1px;
-            position: relative;
-            user-select: none;
-        }
 
-        .key-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(13, 148, 136, 0.2);
-        }
-
-        .key-button:active {
-            transform: translateY(0);
-        }
-
-        .key-button.revealed {
-            border-style: solid;
-            background: var(--primary-grad);
-            color: white;
-            font-family: 'Courier New', monospace;
-            font-size: 22px;
-            letter-spacing: 3px;
-            padding: 18px 40px;
-        }
-
-        .key-button.revealed:hover {
-            box-shadow: 0 8px 30px rgba(13, 148, 136, 0.35);
-        }
 
         .key-hint {
             margin-top: 16px;
@@ -439,29 +402,7 @@
             color: #94a3b8;
         }
 
-        /* ===== TOAST ===== */
-        .toast {
-            position: fixed;
-            bottom: 40px;
-            left: 50%;
-            transform: translateX(-50%) translateY(20px);
-            background: var(--primary);
-            color: white;
-            padding: 14px 32px;
-            border-radius: 50px;
-            font-size: 15px;
-            font-weight: 700;
-            box-shadow: 0 8px 30px rgba(13, 148, 136, 0.4);
-            opacity: 0;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            z-index: 9999;
-            pointer-events: none;
-        }
 
-        .toast.visible {
-            opacity: 1;
-            transform: translateX(-50%) translateY(0);
-        }
 
         /* ===== RESPONSIVE ===== */
         @media (max-width: 640px) {
@@ -485,15 +426,7 @@
                 padding: 28px 20px;
             }
 
-            .key-button {
-                padding: 14px 28px;
-                font-size: 15px;
-            }
 
-            .key-button.revealed {
-                font-size: 18px;
-                letter-spacing: 2px;
-            }
         }
 
         /* ===== FAQ ===== */
@@ -620,7 +553,7 @@
                     </div>
                     <div class="feature-body">
                         <h4>🔑 輸入序號解鎖無上限</h4>
-                        <p>在設定頁面的「使用額度」中輸入序號即可升級為無上限版本。免費版每日可使用 5 次，升級後不受任何限制。</p>
+                        <p>在設定頁面(點擊瀏覽器工具列圖示擴充功能 > 賣家助手 > 設定)的「使用額度」中輸入序號即可升級為無上限版本。免費版每日可使用 5 次，升級後不受任何限制。</p>
                     </div>
                 </div>
             </div>
@@ -636,7 +569,7 @@
                     <span class="btn-icon">💬</span>
                     加入 LINE 官方帳號
                 </a>
-                <a href="#" class="action-btn btn-sponsor" id="sponsor-btn">
+                <a href="https://line.me/R/ti/p/@460mkoip" target="_blank" class="action-btn btn-sponsor" id="sponsor-btn">
                     <span class="btn-icon">☕</span>
                     贊助我們
                 </a>
@@ -646,16 +579,17 @@
         <!-- Serial Key Section -->
         <section id="serial">
             <h2 class="section-title">🔑 免費取得無上限版本序號</h2>
-            <p class="section-desc">點擊下方按鈕即可取得序號，再次點擊即可複製至剪貼簿。</p>
+            <p class="section-desc">加入 LINE 官方帳號即可免費領取無上限版本啟用序號。</p>
 
             <div class="key-card">
-                <h3>您的專屬啟用序號</h3>
-                <p>此序號可解除每日 5 次的使用限制，享受無上限查詢。</p>
+                <h3>解除次數限制</h3>
+                <p>現在加入 LINE 官方帳號並回傳「領取序號」，即可立即獲得專屬啟用碼。</p>
 
-                <button class="key-button" id="key-btn" onclick="handleKeyClick()">
-                    👆 點擊取得序號
-                </button>
-                <div class="key-hint" id="key-hint">點擊按鈕顯示序號</div>
+                <a href="https://line.me/R/ti/p/@460mkoip" target="_blank" class="action-btn btn-line" style="margin: 0 auto; max-width: 320px;">
+                    <span class="btn-icon">💬</span>
+                    立即前往 LINE 領取
+                </a>
+                <div class="key-hint">領取後請回到套件設定頁面進行啟用</div>
             </div>
         </section>
 
@@ -718,50 +652,10 @@
         賣家助手 for 台灣蝦皮 &copy; 2026
     </footer>
 
-    <!-- Toast -->
-    <div class="toast" id="toast"></div>
+
 
     <script>
-        const SERIAL_KEY = 'twspassistantpro';
-        let keyRevealed = false;
-
-        function handleKeyClick() {
-            const btn = document.getElementById('key-btn');
-            const hint = document.getElementById('key-hint');
-
-            if (!keyRevealed) {
-                // First click: reveal the key
-                keyRevealed = true;
-                btn.textContent = SERIAL_KEY;
-                btn.classList.add('revealed');
-                hint.textContent = '👆 再次點擊即可複製到剪貼簿';
-            } else {
-                // Second click: copy to clipboard
-                navigator.clipboard.writeText(SERIAL_KEY).then(() => {
-                    showToast('✅ 已複製至剪貼簿');
-                    hint.textContent = '已複製！請到套件設定頁面貼上啟用';
-                }).catch(() => {
-                    // Fallback
-                    const textarea = document.createElement('textarea');
-                    textarea.value = SERIAL_KEY;
-                    document.body.appendChild(textarea);
-                    textarea.select();
-                    document.execCommand('copy');
-                    document.body.removeChild(textarea);
-                    showToast('✅ 已複製至剪貼簿');
-                    hint.textContent = '已複製！請到套件設定頁面貼上啟用';
-                });
-            }
-        }
-
-        function showToast(message) {
-            const toast = document.getElementById('toast');
-            toast.textContent = message;
-            toast.classList.add('visible');
-            setTimeout(() => {
-                toast.classList.remove('visible');
-            }, 2500);
-        }
+        // No client-side script needed for now.
     </script>
 </body>
 
